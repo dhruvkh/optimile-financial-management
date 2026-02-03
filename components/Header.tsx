@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useApp } from '../App';
 import { useNavigate } from 'react-router-dom';
-
+import Logo from '../customer_logo.jpeg';
 interface HeaderProps {
   onMenuClick: () => void;
   searchQuery: string;
@@ -42,8 +42,12 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, searchQuery, onSearchChang
           <span className="material-icons text-white">menu</span>
         </button>
         <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate('/')}>
-           <span className="material-icons text-blue-200">account_balance</span>
-           <h1 className="text-lg font-bold tracking-tight hidden sm:block">Optimile Financial</h1>
+            <div className=" pt-1 ">
+        <div className="flex items-center justify-left">
+          <img src={Logo} alt="Optimile logo" className="object-cover" style={{ width: '10%', height: '20%' }} />
+        </div>
+        <p className="text-[6px] uppercase tracking-widest text-white-500 mt-1 text-left">powered by Optimile</p>
+      </div>
         </div>
       </div>
 
