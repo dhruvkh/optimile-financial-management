@@ -33,20 +33,20 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, searchQuery, onSearchChang
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 h-16 bg-primary text-white shadow-md z-40 flex items-center px-4 justify-between transition-colors duration-200">
+    <header className="fixed top-0 left-0 right-0 h-16 bg-white text-white z-40 flex items-center px-4 justify-between transition-colors duration-200">
       <div className="flex items-center">
         <button 
           onClick={onMenuClick}
           className="p-2 rounded-full hover:bg-white/10 focus:outline-none mr-4 transition-colors"
         >
-          <span className="material-icons text-white">menu</span>
+          <span className="material-icons text-gray-400">menu</span>
         </button>
         <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate('/')}>
             <div className=" pt-1 ">
         <div className="flex items-center justify-left">
           <img src={Logo} alt="Optimile logo" className="object-cover" style={{ width: '10%', height: '20%' }} />
         </div>
-        <p className="text-[6px] uppercase tracking-widest text-white-500 mt-1 text-left">powered by Optimile</p>
+        <p className="text-[6px] uppercase tracking-widest text-gray-400 mt-1 text-left">powered by Optimile</p>
       </div>
         </div>
       </div>
@@ -58,16 +58,16 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, searchQuery, onSearchChang
           onClick={onOpenCommand}
         >
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <span className="material-icons text-blue-300 group-hover:text-white transition-colors">search</span>
+            <span className="material-icons text-gray-400  transition-colors">search</span>
           </div>
           <input
             type="text"
             readOnly
             placeholder="Search Customers, Invoices, Fleet... (Ctrl+K)"
-            className="block w-full pl-10 pr-3 py-2 border-none rounded-md leading-5 bg-blue-800/50 text-white placeholder-blue-200 focus:outline-none focus:bg-white/20 sm:text-sm transition-all duration-200 cursor-pointer"
+            className="block w-full pl-10 pr-3 py-2 border-none rounded-md leading-5 text-white placeholder-blue-200 focus:outline-none focus:bg-white/20 sm:text-sm transition-all duration-200 cursor-pointer"
           />
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-             <kbd className="hidden sm:inline-block border border-blue-400 rounded px-1 text-xs text-blue-200 font-sans">⌘K</kbd>
+             {/* <kbd className="hidden sm:inline-block border border-blue-400 rounded px-1 text-xs text-blue-200 font-sans">⌘K</kbd> */}
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, searchQuery, onSearchChang
             className="p-2 rounded-full hover:bg-white/10 relative transition-colors"
             onClick={() => setShowNotifications(!showNotifications)}
           >
-            <span className="material-icons text-white">notifications</span>
+            <span className="material-icons text-gray-400">notifications</span>
             {unreadCount > 0 && (
               <span className="absolute top-1.5 right-1.5 h-2.5 w-2.5 bg-red-500 rounded-full border-2 border-primary"></span>
             )}
@@ -126,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, searchQuery, onSearchChang
         </div>
 
         <button className="p-2 rounded-full hover:bg-white/10 transition-colors hidden sm:block">
-           <span className="material-icons text-white">help_outline</span>
+           <span className="material-icons text-gray-400">help_outline</span>
         </button>
         
         {/* User Profile Snippet */}
